@@ -1,15 +1,6 @@
 # CasaBengala
 Prueba tecnica
 
-# Tecnologias empleadas
-- Java 21
-- Spring boot 4
-- hibernate
-- MySql 8
-- Swagger
-- Angular 21
-- Docker
-
 ## Tecnologias Utilizadas
 - Aplicacion
   - Java JDK 21
