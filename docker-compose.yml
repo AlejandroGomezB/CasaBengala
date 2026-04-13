@@ -1,0 +1,43 @@
+services:
+  java_db:
+    container_name: java_db
+    image: mysql:8.0
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gamefestival
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-proot" ]
+      timeout: 5s
+      retries: 10
+      interval: 5s
+  java_app:
+    container_name: pruebaTec-app
+    image: java_app:1.0.0
+    restart: always
+    build:
+      context: ./casaBengala-back
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: jdbc:mysql://java_db:3306/gamefestival?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: root
+    depends_on:
+      java_db:
+        condition: service_healthy
+  angular_app:
+    container_name: angular_app
+    build:
+      context: ./casaBengala-front
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "4200:80"
+    depends_on:
+      - java_app
+

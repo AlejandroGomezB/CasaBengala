@@ -1,0 +1,250 @@
+<section class="hero">
+    <video #bgVideo autoplay muted loop playsinline class="background-video">
+        <source src="assets/video/_intro.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+        <div class="container text-center position-relative">
+            <img src="assets/img/logo.png" class="logo-img" alt="logo">
+            <h1 class="display-2 fw-bold">GameFestival 2026</h1>
+            <h3 class="display-6 fw-bold mb-4">¡La experiencia gamer del año está por comenzar!</h3>
+            <section class="text-center py-2">
+                <div class="container">
+                    <p class="lead mb-4">
+                    Prepárate para vivir una convención de videojuegos como nunca antes: 
+                    <strong>torneos en vivo</strong>, zonas interactivas, lanzamientos exclusivos, 
+                    cosplay, invitados especiales y la oportunidad de conectar con miles de apasionados del gaming.
+                    </p>
+                    <div class="my-2">
+                        <p class="mb-2"><strong>Cupos limitados</strong></p>
+                        <p class="mb-2"><strong>Vive la emoción en un solo lugar</strong></p>
+                        <p class="mb-2"><strong>Sé parte de la comunidad que está marcando el futuro del entretenimiento digital</strong></p>
+                    </div>
+                    <a href="#registro" class="btn btn-neon btn-lg px-5">Únete Ahora</a>
+                    <p class="mt-4 fw-bold fs-4">¡El juego comienza contigo!</p>
+                </div>
+            </section>
+            
+            <div class="countdown">
+                <div class="time-box"><span>{{time.days}}</span>Días</div>
+                <div class="time-box"><span>{{time.hours}}</span>Horas</div>
+                <div class="time-box"><span>{{time.minutes}}</span>Min</div>
+                <div class="time-box"><span>{{time.seconds}}</span>Seg</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="evento" class="section text-white" data-aos="fade-up">
+    <div class="container">
+        <h2 class="text-center mb-4">¿Qué encontrarás?</h2>
+    </div>
+    <div id="encontrarEvento" class="carousel slide" data-bs-touch="true" data-bs-interval="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-md-6 text-center p-4">
+                            <h4>Torneos</h4>
+                            <p>Compite en los mejores títulos del momento con premios increíbles.</p>
+                        </div>
+                        <div class="col-md-6 h-100">
+                            <img src="assets/img/encontrar/encontrar1.png" class="img-fluid w-100 h-100" loading="eager">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-md-6 h-100">
+                            <img src="assets/img/encontrar/encontrar2.jpg" class="img-fluid w-100 h-100" loading="eager">
+                        </div>
+                        <div class="col-md-6 text-center p-4">
+                            <h4>Cosplay</h4>
+                            <p>Concursos, pasarelas y experiencias con tus personajes favoritos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-md-6 text-center p-4">
+                            <h4>Stands</h4>
+                            <p>Marcas, coleccionables, demos y lanzamientos exclusivos.</p>
+                        </div>
+                        <div class="col-md-6 h-100">
+                            <img src="assets/img/encontrar/encontrar3.jpg" class="img-fluid w-100 h-100" loading="eager">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#encontrarEvento" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#encontrarEvento" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<section class="section py-4 text-white" data-aos="fade-down">
+    <div class="container">
+      <h2 class="text-center mb-4">Galería Multimedia</h2>
+    </div>
+    <div id="galeria" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @for (image of  images; track $index) {
+                @if ($index == 0) {
+                    <div class="carousel-item active" data-bs-interval="1000">
+                        <div class="container">
+                            <div class="row g-4 align-items-center">
+                                <div class="col-md-12 h-100">
+                                    <img [src]= "image" class="d-block w-100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                } @else {
+                    <div class="carousel-item" data-bs-interval="1000">
+                        <div class="container">
+                            <div class="row g-4 align-items-center">
+                                <div class="col-md-12 h-100">
+                                    <img [src]="image" class="d-block w-100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#galeria" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galeria" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+</section>
+
+<section id="registro" class="section py-5" data-aos="fade-rigth">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-9">
+        <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+          <div class="bg-dark text-white text-center py-4">
+            <h2 class="fw-bold mb-1">
+              <i class="bi bi-controller"></i> Registro
+            </h2>
+            <p class="mb-0 opacity-75">Completa tus datos para participar</p>
+          </div>
+          <div class="card-body p-4 p-md-5">
+            @if(timeLeft()>0){
+              <form class="row g-3" (submit)="onSubmit($event)">
+                <div class="col-md-12">
+                  <label class="form-label fw-semibold">
+                    <i class="bi bi-person"></i> Nombre
+                  </label>
+                  <input type="text" [formField]="recordForm.nombre" class="form-control rounded-3" placeholder="Ingresa tu nombre">
+                    @if (recordForm.nombre().touched() && recordForm.nombre().invalid()) {
+                        <div class="error-list">
+                            @for (error of recordForm.nombre().errors(); track error) {
+                            <p>{{ error.message }}</p>
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="col-md-12 mt-3">
+                  <label class="form-label fw-semibold">
+                    <i class="bi bi-person-badge"></i> Apellidos
+                  </label>
+                  <input type="text" [formField]="recordForm.apellidos" class="form-control rounded-3" placeholder="Ingresa tus apellidos">
+                    @if (recordForm.apellidos().touched() && recordForm.apellidos().invalid()) {
+                        <div class="error-list">
+                            @for (error of recordForm.apellidos().errors(); track error) {
+                            <p>{{ error.message }}</p>
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="col-md-12 mt-3">
+                  <label class="form-label fw-semibold">
+                    <i class="bi bi-calendar"></i> Edad
+                  </label>
+                  <input type="number" [formField]="recordForm.edad" class="form-control rounded-3" placeholder="Edad">
+                    @if (recordForm.edad().touched() && recordForm.edad().invalid()) {
+                        <div class="error-list">
+                            @for (error of recordForm.edad().errors(); track error) {
+                            <p>{{ error.message }}</p>
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="col-md-12 mt-3">
+                  <label class="form-label fw-semibold">
+                    <i class="bi bi-geo-alt"></i> Ciudad
+                  </label>
+                  <input type="text" [formField]="recordForm.ciudad" class="form-control rounded-3" placeholder="Ciudad">
+                    @if (recordForm.ciudad().touched() && recordForm.ciudad().invalid()) {
+                        <div class="error-list">
+                            @for (error of recordForm.ciudad().errors(); track error) {
+                            <p>{{ error.message }}</p>
+                            }
+                        </div>
+                    }  
+                </div>
+                <div class="col-12 mt-3">
+                  <label class="form-label fw-semibold">
+                    <i class="bi bi-envelope"></i> Correo Electrónico
+                  </label>
+                  <input type="email" [formField]="recordForm.email" class="form-control rounded-3" placeholder="ejemplo@correo.com">
+                    @if (recordForm.email().touched() && recordForm.email().invalid()) {
+                        <div class="error-list">
+                            @for (error of recordForm.email().errors(); track error) {
+                            <p>{{ error.message }}</p>
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="col-12 mt-4">
+                  <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg rounded-3">
+                      <i class="bi bi-send-fill"></i> Regístrame
+                    </button>
+                  </div>
+                </div>
+                @if(message != ''){
+                    @if(mostrarMensaje()){
+                        @if(error){
+                            <div class="alert alert-danger text-center shadow rounded-4 border-0 p-4 mb-0 mt-4">
+                                <p class="mb-0 fs-5">{{message}}</p>
+                            </div>
+                        }@else {
+                            <div class="alert alert-success text-center shadow rounded-4 border-0 p-4 mb-0 mt-4">
+                                <p class="mb-0 fs-5">{{message}}</p>
+                            </div>
+                        }
+                    }
+                }
+              </form>
+              <div class="card bg-dark border-0 shadow-sm rounded-4 text-center mx-auto mt-4" style="max-width: 320px;">
+                <div class="card-body py-4">
+                  <h6 class="text-light mb-2">⏳ Tiempo restante</h6>
+                  <p class="display-5 fw-bold text-warning mb-0">
+                    {{minutes()}}:{{seconds()}}
+                  </p>
+                </div>
+              </div>
+            } @else {
+              <div class="alert alert-danger text-center shadow rounded-4 border-0 p-4 mb-0">
+                <h4 class="fw-bold mb-2">⛔ Registro Cerrado</h4>
+                <p class="mb-0 fs-5">El registro ha finalizado.</p>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+@import 'aos/dist/aos.css';
+@import "bootstrap-icons/font/bootstrap-icons.css";
+html{
+    scroll-behavior:smooth
+} 
+body{
+    font-family:Arial,sans-serif;
+    color:#fff;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+} 
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(8px)
+} 
+.nav-wrap{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 20px
+}
+
