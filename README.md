@@ -12,11 +12,11 @@ Prueba tecnica
   - HTML
   - CSS
   - Angular
--Base de datos
-  -MySql 8.0
--Otros
-  -Docker
-  -Swagger
+- Base de datos
+  - MySql 8.0
+- Otros
+  - Docker
+  - Swagger
 
 ## Retos
 Uno de los principales retos presentados fue la generacion de la plantilla, por la experiencia que cuento en la parte de diseño se hizo de herramientas externas para poder mejorar el diseño empleado y el uso de IA para pdoer generar el logo y el video empleado en la pagina web.
